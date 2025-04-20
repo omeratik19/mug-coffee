@@ -149,6 +149,25 @@ img {
   align-items: center;
 }
 
+.nav__logo {
+  color: var(--white-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+.nav__logo:hover {
+  color: var(--first-color);
+}
+
+.nav__toggle,
+.nav__close {
+  display: flex;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Navigation for mobile devices */
 
 /* Show menu */
