@@ -337,6 +337,42 @@ img {
 }
 
 /*=============== POPULAR ===============*/
+.popular {
+  background-color: var(--body-white-color);
+}
+
+.popular .section__title {
+  color: var(--title-color);
+}
+
+.popular__swiper {
+  padding-top: 1.5rem;
+}
+
+.popular__card {
+  width: 270px;
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.popular__images {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+}
+
+.popular__shape {
+  width: 195px;
+  height: 195px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  clip-path: inset(50% 0 0 0);
+}
+
+.popular__images img {
+  position: absolute;
+}
 
 /* Swiper class */
 
