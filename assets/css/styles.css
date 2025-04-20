@@ -336,6 +336,14 @@ img {
   box-shadow: 0 8px 24px hsla(166, 85%, 8%, 0.2);
 }
 
+.button-dark {
+  background-color: var(--dark-color);
+}
+
+.button-dark:hover {
+  background-color: var(--dark-color);
+}
+
 /*=============== POPULAR ===============*/
 .popular {
   background-color: var(--body-white-color);
@@ -407,6 +415,14 @@ img {
 
 .popular__description {
   margin-bottom: 1.5rem;
+}
+
+.popular__card:hover .popular__bean-1 {
+  transform: translate(-0.5rem, -0.25rem);
+}
+
+.popular__card:hover .popular__bean-2 {
+  transform: translate(0.5rem, -0.25rem);
 }
 
 /* Swiper class */
