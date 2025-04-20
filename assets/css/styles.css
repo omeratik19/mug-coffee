@@ -172,7 +172,7 @@ img {
 @media screen and (max-width: 1150px) {
   .nav__menu {
     position: fixed;
-    top: 0;
+    top: -120%;
     left: 0;
     background-color: var(--body-color);
     width: 100%;
@@ -187,6 +187,23 @@ img {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+}
+
+.nav__link {
+  color: var(--white-color);
+  font: var(--font-medium) var(--h1-font-size) var(--second-font);
+  line-height: 110%;
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
 }
 
 /* Show menu */
