@@ -26,8 +26,8 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -48,7 +48,7 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
+    --small-font-size: 0.875rem;
   }
 }
 
@@ -81,7 +81,10 @@ button {
   border: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--second-font);
   font-weight: var(--font-medium);
   line-height: 110%;
@@ -129,60 +132,41 @@ img {
 
 /*=============== HEADER & NAV ===============*/
 
-
 /* Navigation for mobile devices */
-
 
 /* Show menu */
 
-
 /* Add shadow header */
-
 
 /* Active link */
 
-
 /*=============== HOME ===============*/
-
 
 /*=============== BUTTON ===============*/
 
-
 /*=============== POPULAR ===============*/
-
 
 /* Swiper class */
 
-
 /*=============== ABOUT ===============*/
-
 
 /*=============== PRODUCTS ===============*/
 
-
 /*=============== CONTACT ===============*/
-
 
 /*=============== FOOTER ===============*/
 
-
 /*=============== SCROLL BAR ===============*/
-
 
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
-
 /* For medium devices */
 
-
 /* For large devices */
-
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
