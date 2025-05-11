@@ -1069,6 +1069,12 @@ img {
     top: 13rem;
     right: 3.5rem;
   }
+
+  .products__container {
+    grid-template-columns: repeat(3, 250px);
+    gap: 5rem;
+    padding-bottom: 2rem;
+  }
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
