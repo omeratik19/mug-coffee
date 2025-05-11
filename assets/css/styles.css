@@ -1084,6 +1084,47 @@ img {
     width: 200px;
     height: 200px;
   }
+
+  .products__coffee {
+    width: 130px;
+  }
+
+  .products__ice-1 {
+    width: 50px;
+    left: 0.75rem;
+  }
+
+  .products__ice-2 {
+    width: 30px;
+    top: 5.5rem;
+    right: 1.5rem;
+  }
+
+  .products__data {
+    margin-top: 1.5rem;
+  }
+
+  .products__name,
+  .products__price {
+    font-size: var(--h2-font-size);
+  }
+
+  .products__button {
+    right: 1rem;
+    bottom: 2rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact .section__title {
+    font-size: var(--biggest-font-size);
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(3, max-content);
+    align-items: flex-start;
+    column-gap: 3rem;
+  }
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
