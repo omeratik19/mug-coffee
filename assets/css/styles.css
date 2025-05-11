@@ -1059,6 +1059,16 @@ img {
   .about__leaf-2 {
     width: 85px;
   }
+
+  .about__leaf-1 {
+    top: 0.75rem;
+    left: 6rem;
+  }
+
+  .about__leaf-2 {
+    top: 13rem;
+    right: 3.5rem;
+  }
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
