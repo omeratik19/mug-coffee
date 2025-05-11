@@ -82,3 +82,12 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2000,
+    delay: 300,
+    //reset: true, // Animation repeat
+})
+
+sr.reveal(`.home__shape`, { origin: 'bottom' })
