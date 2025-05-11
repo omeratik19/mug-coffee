@@ -1054,6 +1054,11 @@ img {
   .about__coffee {
     width: 480px;
   }
+
+  .about__leaf-1,
+  .about__leaf-2 {
+    width: 85px;
+  }
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
