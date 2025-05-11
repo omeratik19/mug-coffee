@@ -1041,6 +1041,17 @@ img {
   .about .section__title {
     text-align: initial;
   }
+
+  .about__description {
+    margin-bottom: 4rem;
+  }
+
+  .about__shape{
+    width: 500px;
+    height: 500px;
+  }
+
+  
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
