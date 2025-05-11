@@ -1046,12 +1046,14 @@ img {
     margin-bottom: 4rem;
   }
 
-  .about__shape{
+  .about__shape {
     width: 500px;
     height: 500px;
   }
 
-  
+  .about__coffee {
+    width: 480px;
+  }
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
