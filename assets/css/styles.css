@@ -1075,6 +1075,15 @@ img {
     gap: 5rem;
     padding-bottom: 2rem;
   }
+
+  .products__card {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .products__shape {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
