@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>İletişim - Mug Coffee</title>
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main class="main">
+      <section class="contact section" id="contact">
+        <div class="contact__container container">
+          <h2 class="section__title">İLETİŞİM</h2>
+
+          <div class="contact__grid">
+            <!-- Sosyal Medya -->
+            <div class="contact__info">
+              <h3 class="contact__title">Bize Yazın</h3>
+              <div class="contact__social">
+                <!-- WhatsApp -->
+                <a
+                  href="https://api.whatsapp.com/send?phone=905424610006&text=Merhaba, Mug Coffee'de Mevzunlar Derneği için toplanma yapmak istiyoruz bilgi alabilir miyim?"
+                  target="_blank"
+                  class="contact__social-link"
+                >
+                  <i class="ri-whatsapp-fill"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/themugcoffeeco/"
+                  target="_blank"
+                  class="contact__social-link"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Çalışma Saatleri -->
+            <div class="contact__info">
+              <h3 class="contact__title">Çalışma Saatleri</h3>
+              <address class="contact__address">
+                Pazartesi - Cumartesi <br />
+                8:00 - 18:00
+              </address>
+            </div>
+          </div>
+
+          <!-- Görsel Kısmı (kaldırıldı) -->
+          <!-- <div class="contact__images">
+            <div class="contact__shape"></div>
+            <img
+              src="assets/img/contact-delivery.png"
+              alt="Teslimat Görseli"
+              class="contact__delivery"
+            />
+          </div> -->
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Header/Footer yükleyici -->
+    <script>
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("header").innerHTML = data));
+
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("footer").innerHTML = data));
+    </script>
+  </body>
+</html>

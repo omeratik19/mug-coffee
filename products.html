@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 6px;
+        padding: 0;
+        background: #f4f4f4;
+      }
+      .show-menu {
+        display: block !important;
+      }
+      .categories {
+        text-align: center;
+        margin: 2rem 0;
+        margin-top: 100px;
+      }
+      .category-btn {
+        background-color: #ddd;
+        border: none;
+        padding: 10px 18px;
+        margin: 0 6px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+      }
+      .category-btn.active,
+      .category-btn:hover {
+        background-color: #a67c00;
+        color: white;
+      }
+      .products-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
+        padding: 0 20px 40px;
+      }
+      .product-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+      .product-card:hover {
+        transform: scale(1.06);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+      .product-card img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin: 0 auto 12px;
+        display: block;
+      }
+      .product-card h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #333;
+      }
+      .modal-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        backdrop-filter: blur(3px);
+        z-index: 9999;
+      }
+      .modal-bg.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 14px;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        transform: scale(0.3);
+        filter: blur(20px);
+        animation: zoomBlurIn 0.6s forwards;
+        position: relative;
+      }
+      @keyframes zoomBlurIn {
+        to {
+          transform: scale(1);
+          filter: blur(0);
+        }
+      }
+      .modal-content h2 {
+        margin-top: 0;
+      }
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #a67c00;
+        color: white;
+        border: none;
+        font-size: 18px;
+        padding: 4px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <!-- Kategoriler -->
+    <div class="categories">
+      <button class="category-btn active" data-category="sicak-icecekler">
+        Sıcak İçecekler
+      </button>
+      <button class="category-btn" data-category="soguk-icecekler">
+        Soğuk İçecekler
+      </button>
+      <button class="category-btn" data-category="yiyecekler">
+        Yiyecekler
+      </button>
+      <button class="category-btn" data-category="tatlilar">Tatlılar</button>
+      <button class="category-btn" data-category="magaza">Mağaza</button>
+    </div>
+
+    <div class="products-container" id="products-container"></div>
+
+    <!-- Modal -->
+    <div class="modal-bg" id="modal-bg">
+      <div class="modal-content" id="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <h2 id="modal-title"></h2>
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Header/Footer yükle ve mobil menü etkinleştir
+      function loadHTML(id, url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+
+            if (id === "header-placeholder") {
+              const navMenu = document.getElementById("nav-menu"),
+                navToggle = document.getElementById("nav-toggle"),
+                navClose = document.getElementById("nav-close");
+
+              if (navToggle) {
+                navToggle.addEventListener("click", () => {
+                  navMenu.classList.add("show-menu");
+                });
+              }
+
+              if (navClose) {
+                navClose.addEventListener("click", () => {
+                  navMenu.classList.remove("show-menu");
+                });
+              }
+
+              const navLinks = document.querySelectorAll(".nav__link");
+              navLinks.forEach((n) =>
+                n.addEventListener("click", () => {
+                  navMenu.classList.remove("show-menu");
+                })
+              );
+            }
+          });
+      }
+      loadHTML("header-placeholder", "header.html");
+      loadHTML("footer-placeholder", "footer.html");
+
+      const productsData = {
+        "sicak-icecekler": [
+          "americano",
+          "cortado",
+          "cappuchino",
+          "flat white",
+          "latte",
+          "caramel macchiato",
+          "mug mocha",
+          "whıte mocha",
+          "filtre kahve",
+          "sütlü filtre kahve",
+          "türk kahvesi",
+          "toffee nut latte",
+          "soft irish",
+          "dark coco",
+          "berry whıte",
+          "chai tea latte",
+          "sıcak çikolata",
+          "salep",
+          "bitki çayı",
+          "double espressso",
+          "double türk kahvesi",
+          "black eye",
+          "dead eye",
+          "pikachu",
+          "jigglypuff",
+          "pumpkin spice latte",
+          "meowth",
+          "kupa çay",
+          "karton bardak",
+          "gold mocha",
+          "süt reçeli latte",
+          "ekstra hot",
+        ],
+        "soguk-icecekler": [
+          "Smoothie",
+          "Frozen",
+          "cold brew latte",
+          "buzlu bardak",
+          "damla cam su",
+          "damla cam soda",
+          "cool lime",
+          "strawberry hibiscus",
+          "mango dragonfruit",
+          "cold brew",
+          "limonata",
+          "çilekli limonata",
+        ],
+        yiyecekler: [
+          "3 peynir bagel",
+          "hindi füme çeçil peynir",
+          "sebzeli vejeteryan",
+          "5 peynir",
+          "dana jambon kaşar",
+          "tavuk teriyaki",
+          "cheddar italyan",
+          "italyan sandviç + coca cola",
+        ],
+        tatlilar: [
+          "brownie",
+          "cookie",
+          "orman meyveli cheesecake",
+          "kalpli pasta",
+          "bardak cookie",
+          "latte mono",
+          "washington",
+          "mozaik pasta",
+          "dilim kek",
+          "parfe",
+          "kechy dondurma",
+          "muffin",
+          "snickers pasta",
+          "tahılı barlar",
+          "makaron",
+          "limonlu cheesecake",
+          "çikolatalı suffle",
+          "marlenika",
+          "callebaut çikolata",
+          "kek+filtre kahve",
+          "cookie + latte",
+        ],
+        magaza: [
+          "TOBB ETÜ KUPA",
+          "TOBB ETÜ ANAHTARLIK",
+          "TOBB ETÜ TSHİRT",
+          "TOBB ETÜ SWEATSHİRT",
+        ],
+      };
+
+      function getImageSrc(productName) {
+        const formatted = productName.toLowerCase();
+        if (productsData["soguk-icecekler"].includes(productName)) {
+          return `assets/img/soguk icecekler/${formatted}.png`;
+        } else if (productsData["sicak-icecekler"].includes(productName)) {
+          return `assets/img/sıcak icecekler/${formatted}.png`;
+        } else {
+          return `assets/img/placeholder.png`;
+        }
+      }
+
+      const productsContainer = document.getElementById("products-container");
+      const modalBg = document.getElementById("modal-bg");
+      const modalTitle = document.getElementById("modal-title");
+      const modalClose = document.getElementById("modal-close");
+
+      function showProducts(category) {
+        productsContainer.innerHTML = "";
+        productsData[category].forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+          card.innerHTML = `<img src="${getImageSrc(
+            product
+          )}" alt="${product}" /><h4>${product}</h4>`;
+          card.addEventListener("click", () => {
+            modalTitle.textContent = product;
+            modalBg.classList.add("active");
+          });
+          productsContainer.appendChild(card);
+        });
+      }
+
+      document.querySelectorAll(".category-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".category-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const category = btn.getAttribute("data-category");
+          showProducts(category);
+        });
+      });
+
+      modalClose.addEventListener("click", () => {
+        modalBg.classList.remove("active");
+      });
+
+      modalBg.addEventListener("click", (e) => {
+        if (e.target === modalBg) {
+          modalBg.classList.remove("active");
+        }
+      });
+
+      showProducts("sicak-icecekler");
+    </script>
+  </body>
+</html>

@@ -3,114 +3,113 @@
 STARCOFFEE
 
 .nav__link
-HOME - POPULAR - ABOUT US - PRODUCTS - CONTACT
+ANA SAYFA - POPÜLER - HAKKIMIZDA - ÜRÜNLER - İLETİŞİM
 
 
 ========== HOME ==========
 .home__title
-COLD COFFEE
+SOĞUK KAHVE
 
 .home__description
-Find delicious hot and cold coffees with the 
-best varieties, calm the pleasure and enjoy 
-a good coffee, order now.
+En iyi çeşitlerle lezzetli sıcak ve soğuk kahveleri bulun, 
+zevkinizi yatıştırın ve 
+iyi bir kahvenin tadını çıkarın, şimdi sipariş verin.
 
 .button
-Learn More
+Daha Fazla
 
 
 ========== POPULAR ==========
 .section__title
-POPULAR <br> CREATIONS
+POPÜLER <br> LEZZETLER
 
 .popular__name
-VANILLA LATTE
-CLASSIC COFFEE
-MOCHA COFFEE
+VANİLYALI LATTE
+KLASİK KAHVE
+MOCHA KAHVE
 
 .popular__description
-Indulge in the simplicity of our delicious cold brew coffee.
+Lezzetli soğuk demleme kahvemizin sadeliğinin tadını çıkarın.
 
 .button
-Order now: $19.90
+Sipariş Ver: ₺150
 
 
 ========== ABOUT ==========
 .section__title
-LEARN MORE <br> ABOUT US
+BİZİ <br> DAHA YAKINDAN TANIYIN
 
 .about__description
-Welcome to StarCoffee, where coffee is pure passion. 
-From bean to cup, we are dedicated to delivering 
-excellence in every sip. Join us on a journey of 
-flavor and quality, crafted with love to create the 
-ultimate coffee experience.
+StarCoffee'ye hoş geldiniz, burada kahve saf bir tutkudur. 
+Çekirdekten fincana kadar her yudumda mükemmellik sunmaya adanmışız. 
+Sevgiyle hazırlanmış, lezzet ve kalite yolculuğumuza katılın ve 
+en iyi kahve deneyimini yaşayın.
 
 .button
-The Best Coffees
+En İyi Kahveler
 
 
 ========== PRODUCTS ==========
 .section__title
-THE MOST <br> REQUESTED
+EN ÇOK <br> TERCIH EDİLENLER
 
 .products__name .products__price
-ICED COFFEE MOCHA
-$15.90
+BUZLU MOCHA KAHVE
+₺150
 
-COFFEE WITH CREAM
-$11.90
+KREMALI KAHVE
+₺150
 
-CAPPUCCINO COFFEE
-$19.90
+KAPUÇİNO KAHVE
+₺150
 
-COFFEE WITH MILK
-$9.90
+SÜTLÜ KAHVE
+₺150
 
-CLASSIC ICED COFFEE
-$5.90
+KLASİK BUZLU KAHVE
+₺150
 
-ICED COFFEE FRAPPE
-$16.90
+FRAPPE BUZLU KAHVE
+₺150
 
 
 ========== CONTACT ==========
 .section__title
-CONTACT US
+BİZE ULAŞIN
 
 .contact__title .contact__address
-Write Us
-https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!
+Bize Yazın
+https://api.whatsapp.com/send?phone=51123456789&text=Merhaba, daha fazla bilgi almak istiyorum!
 https://m.me/bedimcode
 https://t.me/telegram
 
-Location
-Lima - Sun City - Peru <br>
-Av. Moon #4321
+Konum
+Lima - Güneş Şehri - Peru <br>
+Ay Cad. No:4321
 
 https://maps.app.goo.gl/MAmMDxUBFXBSUzLH7
-View On Map
+Haritada Görüntüle
 
-Delivery
+Teslimat
 +00-987-7654-321 <br>
 +11-012345
 
-Attention
-Monday - Saturday <br> 9AM - 10PM
+Çalışma Saatleri
+Pazartesi - Cumartesi <br> 09:00 - 22:00
 
 
 ========== FOOTER ==========
 .footer__title
-Social
+Sosyal Medya
 https://www.facebook.com/
 https://www.instagram.com/
 https://twitter.com/
 
-Payment Methods
+Ödeme Yöntemleri
 
-Subscribe For Discounts
-Email
-Subscribe
+İndirimlerden Haberdar Olun
+E-Posta
+Abone Ol
 
 .footer__copy
-&#169; All Rights Reserved By Bedimcode
+&#169; Tüm Hakları Saklıdır - Bedimcode Tarafından

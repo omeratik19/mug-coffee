@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Popüler Kahveler - STARCOFFEE</title>
+
+    <style>
+      .show-menu {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main class="main">
+      <!--==================== POPULAR ====================-->
+      <section class="popular section" id="popular">
+        <div class="popular__container container">
+          <h2 class="section__title">
+            POPÜLER <br />
+            CREATIONS
+          </h2>
+
+          <div class="popular__swiper swiper">
+            <div class="swiper-wrapper">
+              <!-- 1. -->
+              <article class="popular__card swiper-slide">
+                <div class="popular__images">
+                  <div class="popular__shape"></div>
+                  <img
+                    src="assets/img/bean-img.png"
+                    class="popular__bean-1"
+                    alt="bean"
+                  />
+                  <img
+                    src="assets/img/bean-img.png"
+                    class="popular__bean-2"
+                    alt="bean"
+                  />
+                  <img
+                    src="assets/img/popular-coffee-1.png"
+                    class="popular__coffee"
+                    alt="coffee"
+                  />
+                </div>
+                <div class="popular__data">
+                  <h2 class="popular__name">VANILLA LATTE</h2>
+                  <p class="popular__description">
+                    Lezzetli soğuk demleme kahvemizin sadeliğinin tadını
+                    çıkarın.
+                  </p>
+                  <a href="contact.html" class="button button-dark"
+                    >Sipariş Ver: ₺150</a
+                  >
+                </div>
+              </article>
+
+              <!-- 2. -->
+              <article class="popular__card swiper-slide">
+                <div class="popular__images">
+                  <div class="popular__shape"></div>
+                  <img
+                    src="assets/img/bean-img.png"
+                    class="popular__bean-1"
+                    alt="bean"
+                  />
+                  <img
+                    src="assets/img/bean-img.png"
+                    class="popular__bean-2"
+                    alt="bean"
+                  />
+                  <img
+                    src="assets/img/popular-coffee-2.png"
+                    class="popular__coffee"
+                    alt="coffee"
+                  />
+                </div>
+                <div class="popular__data">
+                  <h2 class="popular__name">AMERİCANO</h2>
+                  <p class="popular__description">
+                    Lezzetli soğuk demleme kahvemizin sadeliğinin tadını
+                    çıkarın.
+                  </p>
+                  <a href="contact.html" class="button button-dark"
+                    >Sipariş Ver: ₺150</a
+                  >
+                </div>
+              </article>
+
+              <!-- 3. -->
+              <article class="popular__card swiper-slide">
+                <div class="popular__images">
+                  <div class="popular__shape"></div>
+                  <img
+                    src="assets/img/bean-img.png"
+                    class="popular__bean-1"
+                    alt="bean"
+                  />
+                  <img
+                    src="assets/img/bean-img.png"
+                    class="popular__bean-2"
+                    alt="bean"
+                  />
+                  <img
+                    src="assets/img/popular-coffee-3.png"
+                    class="popular__coffee"
+                    alt="coffee"
+                  />
+                </div>
+                <div class="popular__data">
+                  <h2 class="popular__name">MOCHA COFFEE</h2>
+                  <p class="popular__description">
+                    Lezzetli soğuk demleme kahvemizin sadeliğinin tadını
+                    çıkarın.
+                  </p>
+                  <a href="contact.html" class="button button-dark"
+                    >Sipariş Ver: ₺150</a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Header/Footer yükleyici + mobil menü sistemi -->
+    <script>
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          const navMenu = document.getElementById("nav-menu"),
+            navToggle = document.getElementById("nav-toggle"),
+            navClose = document.getElementById("nav-close");
+
+          if (navToggle) {
+            navToggle.addEventListener("click", () => {
+              navMenu.classList.add("show-menu");
+            });
+          }
+
+          if (navClose) {
+            navClose.addEventListener("click", () => {
+              navMenu.classList.remove("show-menu");
+            });
+          }
+
+          const navLinks = document.querySelectorAll(".nav__link");
+          navLinks.forEach((n) =>
+            n.addEventListener("click", () => {
+              navMenu.classList.remove("show-menu");
+            })
+          );
+        });
+
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("footer").innerHTML = data));
+    </script>
+  </body>
+</html>
