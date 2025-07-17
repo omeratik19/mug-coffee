@@ -287,7 +287,19 @@
 
       function getImageSrc(productName) {
         const formatted = productName.toLowerCase();
-        if (productsData["soguk-icecekler"].includes(productName)) {
+        // Yiyecekler için özel görsel eşlemesi
+        const yiyeceklerImages = {
+          "3 peynir bagel": "assets/img/yiyecekler/3-peynir-bagel.png",
+          "hindi füme çeçil peynir": "assets/img/yiyecekler/hindfüme.png",
+          "sebzeli vejeteryan": "assets/img/yiyecekler/sebzeli.png",
+          denem: "assets/img/yiyecekler/denem.png",
+        };
+        if (
+          productsData["yiyecekler"].includes(productName) &&
+          yiyeceklerImages[productName]
+        ) {
+          return yiyeceklerImages[productName];
+        } else if (productsData["soguk-icecekler"].includes(productName)) {
           return `assets/img/soguk icecekler/${formatted}.png`;
         } else if (productsData["sicak-icecekler"].includes(productName)) {
           return `assets/img/sıcak icecekler/${formatted}.png`;
