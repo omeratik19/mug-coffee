@@ -143,7 +143,6 @@
         Yiyecekler
       </button>
       <button class="category-btn" data-category="tatlilar">Tatlılar</button>
-      <button class="category-btn" data-category="magaza">Mağaza</button>
     </div>
 
     <div class="products-container" id="products-container"></div>
@@ -277,12 +276,6 @@
           "kek+filtre kahve",
           "cookie + latte",
         ],
-        magaza: [
-          "TOBB ETÜ KUPA",
-          "TOBB ETÜ ANAHTARLIK",
-          "TOBB ETÜ TSHİRT",
-          "TOBB ETÜ SWEATSHİRT",
-        ],
       };
 
       function getImageSrc(productName) {
@@ -300,11 +293,43 @@
             "assets/img/yiyecekler/italyan sandviç + coca cola.png",
           denem: "assets/img/yiyecekler/denem.png",
         };
+
+        // Tatlılar için özel görsel eşlemesi
+        const tatlilarImages = {
+          brownie: "assets/img/tatlilar/brownie.png",
+          cookie: "assets/img/tatlilar/cookie.png",
+          "orman meyveli cheesecake":
+            "assets/img/tatlilar/orman-meyveli-cheesecake.png",
+          "kalpli pasta": "assets/img/tatlilar/kalpli-pasta.png",
+          "bardak cookie": "assets/img/tatlilar/bardak-cookie.png",
+          "latte mono": "assets/img/tatlilar/latte-mono.png",
+          washington: "assets/img/tatlilar/washington.png",
+          "mozaik pasta": "assets/img/tatlilar/mozaik-pasta.png",
+          "dilim kek": "assets/img/tatlilar/dilim-kek.png",
+          parfe: "assets/img/tatlilar/parfe.png",
+          "kechy dondurma": "assets/img/tatlilar/kechy-dondurma.png",
+          muffin: "assets/img/tatlilar/muffin.png",
+          "snickers pasta": "assets/img/tatlilar/snickers-pasta.png",
+          "tahılı barlar": "assets/img/tatlilar/tahili-barlar.png",
+          makaron: "assets/img/tatlilar/makaron.png",
+          "limonlu cheesecake": "assets/img/tatlilar/limonlu-cheesecake.png",
+          "çikolatalı suffle": "assets/img/tatlilar/cikolatali-suffle.png",
+          marlenika: "assets/img/tatlilar/marlenika.png",
+          "callebaut çikolata": "assets/img/tatlilar/callebaut-cikolata.png",
+          "kek+filtre kahve": "assets/img/tatlilar/kek-filtre-kahve.png",
+          "cookie + latte": "assets/img/tatlilar/cookie-latte.png",
+        };
+
         if (
           productsData["yiyecekler"].includes(productName) &&
           yiyeceklerImages[productName]
         ) {
           return yiyeceklerImages[productName];
+        } else if (
+          productsData["tatlilar"].includes(productName) &&
+          tatlilarImages[productName]
+        ) {
+          return tatlilarImages[productName];
         } else if (productsData["soguk-icecekler"].includes(productName)) {
           return `assets/img/soguk icecekler/${formatted}.png`;
         } else if (productsData["sicak-icecekler"].includes(productName)) {
