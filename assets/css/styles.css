@@ -1293,7 +1293,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: left 2s ease-in-out;
+  transition: left 1s ease-in-out;
 }
 
 .page-transition-bar.active {
