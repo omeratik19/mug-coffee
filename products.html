@@ -394,8 +394,8 @@
       // Sayfa yüklendiğinde geçiş bar'ını gizle
       window.addEventListener("load", () => {
         setTimeout(() => {
-          pageTransitionBar.style.left = "100%";
-        }, 1000);
+          pageTransitionBar.classList.add("exit");
+        }, 2500);
       });
 
       // Sayfa geçişlerinde geçiş bar'ını göster
@@ -417,7 +417,7 @@
             // Kısa bir gecikme sonra sayfaya git
             setTimeout(() => {
               window.location.href = href;
-            }, 800);
+            }, 1200);
           }
         });
       });
