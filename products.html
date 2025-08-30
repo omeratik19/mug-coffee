@@ -129,6 +129,11 @@
     </style>
   </head>
   <body>
+    <!-- PAGE TRANSITION BAR -->
+    <div class="page-transition-bar" id="pageTransitionBar">
+      <h1 class="page-transition-text">Mug Coffee</h1>
+    </div>
+
     <div id="header-placeholder"></div>
 
     <!-- Kategoriler -->
@@ -382,6 +387,40 @@
       });
 
       showProducts("sicak-icecekler");
+
+      // Sayfa geçiş efekti
+      const pageTransitionBar = document.getElementById('pageTransitionBar');
+      
+      // Sayfa yüklendiğinde geçiş bar'ını gizle
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          pageTransitionBar.style.left = '100%';
+        }, 1000);
+      });
+
+      // Sayfa geçişlerinde geçiş bar'ını göster
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          
+          // Eğer external link değilse ve aynı sayfa değilse
+          if (href && !href.startsWith('http') && !href.startsWith('#') && href !== window.location.pathname) {
+            e.preventDefault();
+            pageTransitionBar.classList.add('active');
+            
+            // Kısa bir gecikme sonra sayfaya git
+            setTimeout(() => {
+              window.location.href = href;
+            }, 800);
+          }
+        });
+      });
+
+      // Browser back/forward butonları için
+      window.addEventListener('beforeunload', () => {
+        pageTransitionBar.classList.add('active');
+      });
     </script>
   </body>
 </html>
